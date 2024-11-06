@@ -6,16 +6,24 @@ class Solution:
         current_num = 0
         current_oper = "+"
         # parse the string seperate nums and and operaters
-        for i, char in str:
+        for i, char in enumerate(s):
             if char.isdigit():
-                current_number = current_number * 10 + int(char)
+                current_num = current_num * 10 + int(char)
 
-            if char in "+-*/" or len(s) - 1:
-                if current_oper
+            if char in "+-*/" or i == len(s) - 1:
+                if current_oper == '+':
+                    stack.append(current_num)
+                elif current_oper == '-':
+                    stack.append(-current_num)
+                elif current_oper == '*':
+                    stack.append(stack.pop() * current_num)
+                elif current_oper == '/':
+                    stack.append(int(stack.pop() / current_num))
 
+                current_oper = char
+                current_num = 0
 
-        
-        return s
+        return sum(stack)
     
 
 solution = Solution()
