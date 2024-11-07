@@ -1,0 +1,22 @@
+680. Valid Palindrome II
+
+given a string return true or false if the string can be palindrome after deleting AT MOST ONE character from it
+
+Example 1:
+
+Input: s = "aba"
+Output: true
+
+Example 2:
+
+Input: s = "abca"
+Output: true
+Explanation: You could delete the character 'c'.
+
+Example 3:
+
+Input: s = "abc"
+Output: false
+
+---THOUGHTS---
+another task of string manipulation
