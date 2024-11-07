@@ -1,0 +1,69 @@
+408. Valid Word Abbreviation
+
+given a word and an abbr string I need to return a bool weather the abbreviation is correct or not
+
+Example 1:
+
+Input: word = "internationalization", abbr = "i12iz4n"
+Output: true
+Explanation: The word "internationalization" can be abbreviated as "i12iz4n" ("i nternational iz atio n").
+Example 2:
+
+Input: word = "apple", abbr = "a2e"
+Output: false
+Explanation: The word "apple" cannot be abbreviated as "a2e".
+
+-----THOUGHTS-------
+
+truly I dont have a clue how to attack this problem. my initial though is too take the word string and get its length
+and then split the abbreviation apart from letters and number and get the sum of them and then see if its equal to the word length?
+
+--------CGPT--------
+chat said to use two pointers for this solution basically we are going to take both values side by side and iterate over each index of the strings and if they match go to the next BUT if the next index is a number then we skip theat nuber equal to the index of the word and continue
+
+
+----SOLUTION----
+solution was created using two pointers. Big O notation for this is O(n + m) since we iterate through word and abbr
+space complexity is O(1) because we only use a few variables (num, wrd_index and abr_index) or any other data dtructures that change or grow with input size
+
+class Solution:
+    def validWordAbbreviation(self, word: str, abbr: str) -> bool:
+        wrd_index, abr_index = 0, 0
+
+        while wrd_index < len(word) and abr_index < len(abbr):
+            if abbr[abr_index].isalpha():
+                if word[wrd_index] != abbr[abr_index]:
+                    return False
+                
+                wrd_index += 1
+                abr_index += 1
+                
+            elif abbr[abr_index].isdigit():
+                if abbr[abr_index] == '0':
+                    return False
+        
+                num = 0
+                while abr_index < len(abbr) and abbr[abr_index].isdigit():
+                    num = num * 10 + int(abbr[abr_index])
+                    abr_index += 1
+
+                wrd_index += num
+            else:
+                return False
+        
+        return wrd_index == len(word) and abr_index == len(abbr)
+
+
+at the start we define 2 pointers, the indices for the word index and abbr index
+then we create a while loop for each length of out strings (word and abbr)
+first inside the loop we determine if the selected index is a letter
+if this is true we check to make sure it matches the letter in the word as well and if it does not we immediately return false
+after we simply progress to the next index
+else if the index is not a letter we check if its a digit
+next if that is true then we check if that digit is a zero as this is not valid and if so we immediately return false
+if it is not a zero we need to check if this number has a corresponding number that represents it as double digits
+after that we set a num var then if we haven't finished the abbr string and the current char is a digit
+then we loop through the abbr to find the consecutive digits and build them as we go through the abbr
+after we build the num we increment the word index with the new number and proceed
+if the index is neither a letter or a number thne we retrun false since that is invalid
+then our retrun statement is a bool that checks to see if the wrd index and the abbr index are equal to the length

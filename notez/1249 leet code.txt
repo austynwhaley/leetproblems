@@ -1,0 +1,36 @@
+1249 leet code
+
+I nee to go through the string and validate that the parentheses is valid and that they
+aren't conflicting in any way or in some weird order
+
+Example 1:
+
+Input: s = "lee(t(c)o)de)"
+Output: "lee(t(c)o)de"
+Explanation: "lee(t(co)de)" , "lee(t(c)ode)" would also be accepted.
+Example 2:
+
+Input: s = "a)b(c)d"
+Output: "ab(c)d"
+Example 3:
+
+Input: s = "))(("
+Output: ""
+Explanation: An empty string is also valid.
+
+here are the definitions of "valid"
+
+It is the empty string, contains only lowercase characters, or
+It can be written as AB (A concatenated with B), where A and B are valid strings, or
+It can be written as (A), where A is a valid string.
+
+-----THOUGHTS-------
+
+basically the parentheses need to be paired and if not then its not valid so I need to do some string manipulation
+
+maybe setting some vars a = ( and b = ) and b can never be before a?
+
+there needs to be a loop that runs through the incoming string. maybe loop through the string and it matches a or b (is a parentheses) then there should be some logic that checks if it has a corresponding bracket
+
+
+

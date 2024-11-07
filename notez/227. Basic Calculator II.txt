@@ -1,0 +1,25 @@
+227. Basic Calculator II
+
+I need to make a func that when given a string S that represents an mathematical expression
+I must evaluate the expression and return the value
+when dividing the answer should truncate toward zero (in other words it needs to be a whole number)
+
+
+Example 1:
+
+Input: s = "3+2*2"
+Output: 7
+
+Example 2:
+
+Input: s = " 3/2 "
+Output: 1
+
+Example 3:
+
+Input: s = " 3+5 / 2 "
+Output: 5
+
+---THOUGHTS---
+
+I accidently cheated when opening this leetcode question and I looked at the tags and it mentioned a stack so I am assuming that is the DS required for this question. my thoughts still initially is I need to break these strings apart in a sense of caculationg the operations separately. I guess I fail to see how we utlize a stack in evaluation expressions? do we braek apart the strings by digits and operators? what about PEMDAS what about needing to execute specific expressions in the corrct otrder to get the correct value?
