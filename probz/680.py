@@ -8,7 +8,10 @@ class Solution:
                 end -= 1
 
             elif s[start] != s[end]:
-                if s[start + 1:end + 1] == s[start + 1:end + 1][::-1] or s[start:end] == s[start:end][::-1]:
+                if (
+                    s[start + 1:end + 1] == s[start + 1:end + 1][::-1] or
+                    s[start:end] == s[start:end][::-1]
+                ):
                     return True
 
                 else: return False

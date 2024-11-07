@@ -1,6 +1,7 @@
 938. Range Sum of BST
 
-Given the root node of a binary search tree and two integers low and high, return the sum of values of all nodes with a value in the inclusive range [low, high].
+Given the root node of a binary search tree and two integers low and high, 
+return the sum of values of all nodes with a value in the inclusive range [low, high].
 
     10
    /  \
@@ -13,8 +14,15 @@ Output: 32
 Explanation: Nodes 7, 10, and 15 are in the range [7, 15]. 7 + 10 + 15 = 32.
 
  #THOUGHTS
-i need to traverse the binary tree not totally sure how to accomplish this in code im guessing I need to keep going left until I cant anymor then go right? the tree is a given array so Im guessing i can make an array and push all the numbers between the low and high int intoo to an array as im checking them?
+i need to traverse the binary tree not totally sure how to accomplish this in code im guessing I need to keep going left until
+I cant anymor then go right? the tree is a given array so Im guessing i can make an array and push all the numbers between the 
+low and high int intoo to an array as im checking them?
 
-primaryped
+---SOLUTION----
 
-59 caliver blvd 330 Florence 
+ so  the solution for this was infact including some recursion which even after getting the solution I didn't understand BUT now I do. 
+ Basically we make 3 checks which these checks are going to call itself to move through the tree and build up the sum while doing so. 
+ First we check if root node is null or not for a base case so recursion doesn't explode. 
+ then we check the root val if its less than the highest range if so we call the original function and traverse the tree to the left 
+ (since in this BTS the left is AWLAYS less) we repeat this pattern if the root.val is less but instead we go right and as we do this 
+ we build up the sum so by the time we are done the sum returns
