@@ -20,3 +20,13 @@ Output: false
 
 ---THOUGHTS---
 another task of string manipulation
+
+my initial thought is to first just check if its a palindrome
+to do this make a copy of the string rearrage the new word and the original string in alphabetical order (or some identical way) and see if there are equal
+
+the tricky part is to see if we can remove a letter. I'm thinking maybe use 2 pointers to go through each index but not really sure
+
+after discussing with Mr.Gpt it seems my 2 pointer hunch was correct but instead of creating a copy i can just create 2 pointers within the string and slowly work my way in checking for matches
+
+if I find a mismatch I will try to remove the right one check if its valid and if not I will remove the left one and if its not 
+valid I will return false otherwise if it is then I will continue till its completes and if I can complete the iterations I will return true
