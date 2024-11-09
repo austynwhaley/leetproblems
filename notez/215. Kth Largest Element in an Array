@@ -1,0 +1,29 @@
+215. Kth Largest Element in an Array
+
+Given an integer array nums and an integer k, return the kth largest element in the array.
+
+Note that it is the kth largest element in the sorted order, not the kth distinct element.
+
+Can you solve it without sorting?
+
+ 
+
+Example 1:
+
+Input: nums = [3,2,1,5,6,4], k = 2
+Output: 5
+Example 2:
+
+Input: nums = [3,2,3,1,2,4,5,5,6], k = 4
+Output: 4
+ 
+
+Constraints:
+
+1 <= k <= nums.length <= 105
+-104 <= nums[i] <= 104
+
+
+---THOUGHTS---
+so at first glance this problem was easy but the optimal solution takes some thought. initially you can just reverse sort the array then return the item given the index that will give you O(n log n) time, where N is the number of elements in nums. while instead if you make a heap and draw the value from that instead O(k + (N - k) * log k) simplifies to O(N log k).
+This is more efficient than O(N log N) when k is much smaller than N.
