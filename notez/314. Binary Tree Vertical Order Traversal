@@ -1,0 +1,36 @@
+314. Binary Tree Vertical Order Traversal
+Given the root of a binary tree, return the vertical order traversal of its nodes' values. (i.e., from top to bottom, column by column).
+
+If two nodes are in the same row and column, the order should be from left to right.
+
+ 
+
+Example 1:
+
+
+Input: root = [3,9,20,null,null,15,7]
+Output: [[9],[3,15],[20],[7]
+
+
+---THOUGHTS---
+
+we must retrun all nodes that are in the same column together
+the tricky part is how do we identify the columns exaclty im thinking (also the I read the hints)
+we are gonna do a breadth first search and we are to initilaze a column list and as we taverse we level we are to increment 
+and the adjust the column accordingly . im thinking root is column 0 then left is col -1 
+and the column right is 1, so the farther left you go from root the column decreases and the
+farther right you go the column increases 
+
+
+---SOLUTION---
+
+In this solution, we use a Breadth-First Search (BFS) approach to traverse the tree and group the nodes by their vertical columns:
+
+this solution included a few things, we turned the tree into a queue with each item
+we also gave it an column 0. we then initialized a hash map to store our data with thier col
+so we while loopeed through the queue, we take the iteam from the queue and pop it with its col
+then we make sure the node isnt empty, if that is goosd we check if the current node has a left
+and if thats true we add the node to the end of the queue and subtract a column by 1
+if thats false we check if there is a right node and if so we add that to the queue and add 1 to the col
+then if thats false we add the item to the hashmap and make the column the items key
+then we sprt the hashmap and retrun the result  
