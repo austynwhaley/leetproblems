@@ -28,8 +28,8 @@ In this solution, we use a Breadth-First Search (BFS) approach to traverse the t
 
 this solution included a few things, we turned the tree into a queue with each item
 we also gave it an column 0. we then initialized a hash map to store our data with thier col
-so we while loopeed through the queue, we take the iteam from the queue and pop it with its col
-then we make sure the node isnt empty, if that is goosd we check if the current node has a left
+so we while loopeed through the queue, we take the item from the queue and pop it with its col
+then we make sure the node isnt empty, if that is good we check if the current node has a left
 and if thats true we add the node to the end of the queue and subtract a column by 1
 if thats false we check if there is a right node and if so we add that to the queue and add 1 to the col
 then if thats false we add the item to the hashmap and make the column the items key

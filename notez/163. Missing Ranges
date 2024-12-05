@@ -1,0 +1,16 @@
+this probelm we are given a list and 2 ints a lower and a upper
+we are to give all the ranges from the first index to the next index
+we do this from the lower to the upper
+
+for the solution we are going to have a var that will essentially 
+check the values as we iterate over the list, to starrt we set it to the 
+given lower int since this will be our starting place
+then we will make a list to store these ranges as we go
+
+so we are going to iterate the length of the incoming list
+if our item/num is greater than the number check this means our check
+is the lowest range so far so we append [check, item] to our storage list
+then we set the new number check num + 1
+now we just need to handle for when we reach the upper, so we will see
+if the number check is less than or greater than the upper
+and we will add that to our list or greater than the upper

@@ -25,5 +25,14 @@ Constraints:
 
 
 ---THOUGHTS---
-so at first glance this problem was easy but the optimal solution takes some thought. initially you can just reverse sort the array then return the item given the index that will give you O(n log n) time, where N is the number of elements in nums. while instead if you make a heap and draw the value from that instead O(k + (N - k) * log k) simplifies to O(N log k).
-This is more efficient than O(N log N) when k is much smaller than N.
+so at first glance this problem was easy but the optimal solution takes some thought.
+initially you can just reverse sort the array then return the item given the index that 
+will give you O(n log n) time, where N is the number of elements in nums. while instead
+if you make a heap and draw the value from that instead O(k + (N - k) * log k) 
+simplifies to O(N log k). This is more efficient than O(N log N) 
+when k is much smaller than N.
+
+heap data structure is either a max or min 
+and (min being a default use case) for our python solution
+we have a built in heapify to accomplish this
+other languages requre us to build a minheap class from scratch

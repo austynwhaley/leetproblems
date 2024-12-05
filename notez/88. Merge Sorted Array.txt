@@ -1,0 +1,12 @@
+for this problem we are given 2 lists nums1 and nums2 and 2 integers m and n
+we are to merge the sorted arrays in place. ints m and n represent how many 
+item from each list will return [nums1, m] [nums2,n]
+
+in this solution we set a pointer called 'last' which represents the last index
+in the merged array then we will iterate through our given ints to ensure 
+we are with in the range of the fully merged array.
+now we need set our values are in a non-decreasing order. 
+we basically are gonna use 2 points nums[m - 1] and nums2[n - 1] and work 
+backwards adding in numbers from nums2 into the nums1 one list
+techinally in a decreasing order since we are going backwards
+then finally we splice in nums 2 to the end if there are remaning characters
